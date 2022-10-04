@@ -3,6 +3,12 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Logo from '../src/assets/logo/plotly-logo.svg';
 import Purple from '../src/assets/images/purple-image.png';
+import Colgate from '../src/assets/logo/colgate-logo.svg';
+import Nvidia from '../src/assets/logo/nvidia-logo.svg';
+import Kc from '../src/assets/logo/kc-logo.svg';
+import Azz from '../src/assets/logo/azz-logo.svg';
+import Tmobile from '../src/assets/logo/Tmobile-logo.svg';
+import Tva from '../src/assets/logo/tva-logo.svg';
 
 
 export default function Home() {
@@ -68,7 +74,14 @@ export default function Home() {
           <p>*required</p>
         </div>
         <Image src={Purple} alt="purple-picture" />
-        <div></div>
+        <div>
+          <Image src={Colgate} alt="colgate-logo" />
+          <Image src={Nvidia} alt="nvidia-logo" />
+          <Image src={Kc} alt="kc-logo" />
+          <Image src={Azz} alt="azz-logo" />
+          <Image src={Tmobile} alt="Tmobile-logo" />
+          <Image src={Tva} alt="Tva-logo" />
+        </div>
       </main>
 
       <footer className={styles.footer}>
