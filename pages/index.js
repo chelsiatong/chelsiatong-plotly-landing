@@ -68,7 +68,7 @@ export default function Home() {
           <p>*required</p>
         </div>
         <Image src={Purple} alt="purple-picture" />
-
+        <div></div>
       </main>
 
       <footer className={styles.footer}>
