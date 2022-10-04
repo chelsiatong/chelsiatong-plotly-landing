@@ -20,82 +20,72 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header} >
-        <Image src={Logo} alt="plotly-logo" />
+        <Image className={styles.plotly_logo} src={Logo} alt="plotly-logo" />
       </header>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          See Dash in action.
-        </h1>
+          See Dash in action.</h1>
         <h2>Thank you for your interest in Dash Enterprise. We'll be in touch soon to schedule a demo.</h2>
-
-        <ul>
+        <ul className={styles.list}>
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
           <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
           <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
         </ul>
-
         <div className={styles.card}>
           <div>
             <input type="radio" name="occupation" />
-            <label>Professional</label>
+            <label className={styles.radio}>Professional</label>
             <input type="radio" name="occupation" />
-            <label>Student</label>
+            <label className={styles.radio}>Student</label>
           </div>
           <div>
-            <label>First Name*</label>
+            <label>First Name*</label><br></br>
             <input type="text"></input>
           </div>
           <div>
-            <label>Last Name*</label>
+            <label>Last Name*</label><br></br>
             <input type="text"></input>
           </div>
           <div>
-            <label>Business Email*</label>
+            <label>Business Email*</label><br></br>
             <input type="text"></input>
           </div>
           <div>
-            <label>Phone*</label>
+            <label>Phone*</label><br></br>
             <input type="tel"></input>
           </div>
           <div>
-            <label>Company Name*</label>
+            <label>Company Name*</label><br></br>
             <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></input>
           </div>
           <div>
-            <label>Title*</label>
+            <label>Title*</label><br></br>
             <input type="text"></input>
           </div>
           <div>
-            <label>Tell us about your project*</label>
+            <label>Tell us about your project*</label><br></br>
             <textarea></textarea>
           </div>
-          <button>Send</button>
-          <p>*required</p>
+          <div className={styles.submit}>
+            <button>Send</button>
+            <p>*required</p>
+          </div>
         </div>
         <Image src={Purple} alt="purple-picture" />
-        <div>
-          <Image src={Colgate} alt="colgate-logo" />
-          <Image src={Nvidia} alt="nvidia-logo" />
-          <Image src={Kc} alt="kc-logo" />
-          <Image src={Azz} alt="azz-logo" />
-          <Image src={Tmobile} alt="Tmobile-logo" />
-          <Image src={Tva} alt="Tva-logo" />
+        <div className={styles.logos} >
+          <div>
+            <Image src={Colgate} alt="colgate-logo" />
+            <Image src={Nvidia} alt="nvidia-logo" />
+            <Image src={Kc} alt="kc-logo" />
+          </div>
+          <div>
+            <Image src={Azz} alt="azz-logo" />
+            <Image src={Tmobile} alt="Tmobile-logo" />
+            <Image src={Tva} alt="Tva-logo" />
+          </div>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
 
   )
