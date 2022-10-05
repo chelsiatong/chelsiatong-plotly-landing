@@ -8,34 +8,31 @@
     padding: 3rem 4rem;
   }
 
+  .main {
+    padding-top: 1.5rem;
+  }
+
   .plotly_logo {
     background-color: red;
   }
 
   .title {
     font-family: 'Roboto Mono' sans-serif;
-    font-size: 3.5rem;
-    text-align: left;
-    margin: 0;
-  }
-
-  .title h2 {
-    font-size: 1.75rem;
+    padding-bottom: 0.5rem;
   }
 
   .list {
-    padding: 0;
-    margin-left: 1rem;
     color: #7E8489;
+
   }
 
   .list li {
     padding-bottom: 1rem;
+    margin-left: 1rem;
   }
 
   .list li::marker {
     color: #7A76FF;
-
   }
 
   .card {
@@ -91,6 +88,25 @@
     display: flex;
   }
 
+  .submit button {
+    background-color: #7A76FF;
+    padding: 1rem;
+    width: 6rem;
+    color: white;
+    font-weight: 700;
+    font-family: 'Inter' sans-serif;
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    margin-right: 2rem;
+  }
+
+  .submit p {
+    padding-top: 0.5rem;
+  }
+
 }
 
 @media (min-width: 1280px) {
@@ -101,26 +117,4 @@
 
 .container {
   box-sizing: border-box;
-}
-
-
-.main {
-  min-height: 100vh;
-  padding: 2rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
 }
