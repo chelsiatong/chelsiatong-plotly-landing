@@ -7,7 +7,6 @@ import { FormControl, FormLabel, Input, Textarea } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import { useColorMode, useColorModeValue } from '@chakra-ui/react'
 import DarkMode from '../src/components/DarkMode'
-import styles from '../styles/Home.module.css';
 import Logo from '../src/assets/logo/plotly-logo.svg';
 import Darklogo from '../src/assets/logo/plotly-dark-logo.svg';
 import Purple from '../src/assets/images/purple-image.svg';
@@ -21,9 +20,15 @@ import Tva from '../src/assets/logo/tva-logo.svg';
 function Home() {
 
   const bgColor = useColorModeValue('white', '#1e1e1e')
+  const secondaryTextColor = useColorModeValue('#1e1e1e', 'white')
+
+  // Created the responsive design so that tablet falls under desktop from mockup
   const breakpoints = {
-    sm: '320px',
-    md: '768px'
+    base: '0em',
+    sm: '30em',
+    md: '48em',
+    lg: '62em',
+    xl: '80em',
   }
 
   return (
@@ -33,52 +38,74 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
         <title>Plotly</title>
       </Head>
-      <Box p='4rem 2rem 0'  >
+      <Box p={{ base: '4rem 2rem 0', xl: '4rem 6rem 0' }}>
         <Flex as="header" flexDirection="row" justify="space-between" mb='1rem'
           width='100%'>
-          <Image src={Logo} alt="plotly-logo" width='100px' />
+          <Image src={Logo} alt="plotly-logo" width='110px' />
           {/* <Image src={Darklogo} alt="plotly-logo" width='100px' /> */}
           <DarkMode />
         </Flex>
-        <Flex flexDirection='column' width={{ md: '350px' }} pt={{ md: '1rem' }} >
+
+        <Flex flexDirection='column' width={{ xl: '550px' }} pt={{ xl: '1rem' }} >
           <Flex as="main" flexDirection="column" p='0.8rem 0 0'>
-            <Heading as='h1' size={{ sm: 'xl', md: 'lg' }}>See Dash in action.</Heading>
-            <Text fontSize={{ sm: 'md', md: 'sm' }} fontWeight='bold' mb='1rem'>Thank you for your interest in Dash Enterprise. We'll be in touch soon to schedule a demo.</Text>
+            <Heading as='h1' size={{ base: 'xl', xl: '2xl' }} pb={{ xl: '1rem' }}>See Dash in action.</Heading>
+            <Text fontSize={{ base: 'md', xl: '2xl' }} fontWeight='bold' mb='1rem'>Thank you for your interest in Dash Enterprise. We'll be in touch soon to schedule a demo.</Text>
           </Flex>
-          <UnorderedList fontSize='sm' colorScheme='#7A76FF;' color='#7E8489;'>
-            <ListItem pb='0.5rem' >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ListItem>
-            <ListItem pb='0.5rem'>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</ListItem>
+          <UnorderedList fontSize={{ base: 'sm', xl: 'md' }} colorScheme='#7A76FF;' color='#7E8489;'>
+            <ListItem pb={{ base: '0.5rem', xl: '1rem' }} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ListItem>
+            <ListItem pb={{ base: '0.5rem', xl: '1rem' }}>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</ListItem>
             <ListItem >Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</ListItem>
           </UnorderedList>
         </Flex>
-        <Box m='auto' color='#7E8489;' p='3.2rem 1.5rem 2rem' borderRadius='1.4rem' b='0.5px solid  #ececec;' boxShadow='4px 8px 18px 0px #D9D9D940;' maxWidth='40rem' zIndex='9999' position='relative' top='1.2rem' bg={bgColor} >
+        <Box m='auto' p='3.2rem 1.5rem 2rem' borderRadius='1.4rem' b='0.5px solid  #ececec;' boxShadow='4px 8px 18px 0px #D9D9D940;' maxWidth={{ base: '40rem', xl: '30rem' }} zIndex='9999' position='relative' top={{ base: '1.2rem', xl: '-23rem' }} bg={bgColor} float={{ xl: 'right' }}>
           <RadioGroup defaultValue='1' >
-            <Stack direction='row' spacing={5} fontSize='xs' fontWeight='bold' mb='2rem' >
-              <Radio colorScheme='#7A76FF;' value='1'>Professional</Radio>
-              <Radio colorScheme='#7A76FF;' value='2'>Student</Radio>
+            <Stack direction='row' spacing={{ base: 7, xl: 8 }} fontSize='xs' fontWeight='bold' mb='2rem'  >
+              <Radio colorScheme='#7A76FF;' color={secondaryTextColor} value='1'>Professional</Radio>
+              <Radio colorScheme='#7A76FF;' color={secondaryTextColor} value='2'>Student</Radio>
             </Stack>
           </RadioGroup>
-          <FormControl >
-            <FormLabel fontWeight='400' requiredIndicator>First name*</FormLabel>
-            <Input type='text' mb='1.5rem' />
-            < FormLabel fontWeight='400' requiredIndicator> Last name*</FormLabel>
-            <Input type='text' mb='1.5rem' />
-            <FormLabel fontWeight='400' requiredIndicator>Business Email*</FormLabel>
-            <Input type='email' mb='1.5rem' />
-            <FormLabel fontWeight='400' requiredIndicator>Phone*</FormLabel>
-            <Input type='tel' mb='1.5rem' />
-            <FormLabel fontWeight='400' requiredIndicator>Company Name*</FormLabel>
-            <Input type='text' mb='1.5rem' />
-            <FormLabel fontWeight='400' requiredIndicator>Title*</FormLabel>
-            <Input type='text' mb='1.5rem' />
+          <FormControl color='#7E8489;'>
+            <Flex flexDirection={{ base: 'column', xl: 'row' }}>
+              <Flex flexDirection='column' mr={{ xl: '1rem' }}>
+                <FormLabel fontWeight='400' requiredIndicator>First name*</FormLabel>
+                <Input type='text' mb='1.5rem' />
+              </Flex>
+              <Flex flexDirection='column'>
+                < FormLabel fontWeight='400' requiredIndicator> Last name*</FormLabel>
+                <Input type='text' mb='1.5rem' />
+              </Flex>
+            </Flex>
+            <Flex flexDirection={{ base: 'column', xl: 'row' }}>
+              <Flex flexDirection='column' mr={{ xl: '1rem' }}>
+                <FormLabel fontWeight='400' requiredIndicator>Business Email*</FormLabel>
+                <Input type='email' mb='1.5rem' />
+              </Flex>
+              <Flex flexDirection='column'>
+                <FormLabel fontWeight='400' requiredIndicator>Phone*</FormLabel>
+                <Input type='tel' mb='1.5rem' />
+              </Flex>
+            </Flex>
+            <Flex flexDirection={{ base: 'column', xl: 'row' }}>
+              <Flex flexDirection='column' mr={{ xl: '1rem' }}>
+                <FormLabel fontWeight='400' requiredIndicator>Company Name*</FormLabel>
+                <Input type='text' mb='1.5rem' />
+              </Flex>
+              <Flex flexDirection='column'>
+                <FormLabel fontWeight='400' requiredIndicator>Title*</FormLabel>
+                <Input type='text' mb='1.5rem' />
+              </Flex>
+            </Flex>
             <FormLabel fontWeight='400' requiredIndicator>Tell us about your project*</FormLabel>
             <Textarea height={'8rem'} resize='none' mb='1.5rem' />
           </FormControl>
-          <Flex className={styles.submit} flexDirection="row">
+          <Flex flexDirection="row">
             <Button color='white' textTransform='uppercase' bgColor='#7A76FF;' mr='2rem' letterSpacing='0.15em' fontWeight='bold' p='1.5rem'>Send</Button>
-            <Text pt='0.8rem'>*required</Text>
+            <Text pt='0.8rem' color='#7E8489;' fontSize='sm'>*required</Text>
           </Flex>
         </Box>
+
+
+
       </Box>
       <Image src={Purple} alt="purple-picture" maxWidth='200px' />
       <Flex display='flex' flexDirection='column' p='2rem 4rem 6rem' >
