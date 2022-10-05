@@ -69,17 +69,19 @@ export default function Home() {
           </Flex>
         </Box>
       </Box>
-      <Image src={Purple} alt="purple-picture" width='20rem' />
-      <Flex display='flex' flexDirection='column' p='2rem 6rem 6rem' >
+      {/* <Flex bgColor='lightyellow' > */}
+      <Image src={Purple} alt="purple-picture" width='600px' m='auto' />
+      {/* </Flex> */}
+      <Flex display='flex' flexDirection='column' p='2rem 7rem 6rem' >
         <Flex mb='2rem' justify='space-between'>
-          <Image src={Colgate} alt="colgate-logo" width='100px' />
-          <Image src={Nvidia} alt="nvidia-logo" width='100px' />
-          <Image src={Kc} alt="kc-logo" width='100px' />
+          <Image src={Colgate} alt="colgate-logo" minWidth='100px' maxWidth='300px' />
+          <Image src={Nvidia} alt="nvidia-logo" minWidth='100px' maxWidth='300px' />
+          <Image src={Kc} alt="kc-logo" minWidth='100px' maxWidth='300px' />
         </Flex>
         <Flex justify='space-between' >
-          <Image src={Azz} alt="azz-logo" width='100px' />
-          <Image src={Tmobile} alt="Tmobile-logo" width='100px' />
-          <Image src={Tva} alt="Tva-logo" width='100px' />
+          <Image src={Azz} alt="azz-logo" minWidth='100px' maxWidth='300px' />
+          <Image src={Tmobile} alt="Tmobile-logo" minWidth='100px' maxWidth='300px' />
+          <Image src={Tva} alt="Tva-logo" minWidth='100px' maxWidth='300px' />
         </Flex>
       </Flex>
     </Stack >
