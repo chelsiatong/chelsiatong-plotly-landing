@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { Text, Heading, Flex, Stack, Box } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react'
 import { Radio, RadioGroup } from '@chakra-ui/react'
+import { FormControl, FormLabel, Input, Textarea } from '@chakra-ui/react'
+import { Button, ButtonGroup } from '@chakra-ui/react'
 import styles from '../styles/Home.module.css';
 // import Logo from '../src/assets/logo/plotly-logo.svg';
 // import Purple from '../src/assets/images/purple-image.png';
@@ -14,6 +16,7 @@ import styles from '../styles/Home.module.css';
 // import Tva from '../src/assets/logo/tva-logo.svg';
 
 export default function Home() {
+
   return (
     <Stack className={styles.container}>
       <Head>
@@ -38,13 +41,33 @@ export default function Home() {
       </UnorderedList>
       <Box className={styles.card} >
         <RadioGroup defaultValue='1'>
-          <Stack direction='row'>
-            <Radio colorScheme='red' value='1'>Professional</Radio>
-            <Radio colorScheme='red' value='2'>Student</Radio>
+          <Stack className={styles.radio} direction='row' spacing={10} fontSize='md' fontWeight='bold'>
+            <Radio value='1'>Professional</Radio>
+            <Radio value='2'>Student</Radio>
           </Stack>
         </RadioGroup>
+        <FormControl >
+          <FormLabel requiredIndicator>First name*</FormLabel>
+          <Input type='text' />
+          < FormLabel requiredIndicator> Last name*</FormLabel>
+          <Input type='text' />
+          <FormLabel requiredIndicator>Business Email*</FormLabel>
+          <Input type='email' />
+          <FormLabel requiredIndicator>Phone*</FormLabel>
+          <Input type='tel' />
+          <FormLabel requiredIndicator>Company Name*</FormLabel>
+          <Input type='text' />
+          <FormLabel requiredIndicator>Title*</FormLabel>
+          <Input type='text' />
+          <FormLabel requiredIndicator>Tell us about your project*</FormLabel>
+          <Textarea height={'8rem'} resize='none' />
+        </FormControl>
+        <Flex className={styles.submit} flexDirection="row">
+          <Button color='white' textTransform='uppercase' >Send</Button>
+          <Text>*required</Text>
+        </Flex>
       </Box>
-    </Stack>
+    </Stack >
   )
 }
 
