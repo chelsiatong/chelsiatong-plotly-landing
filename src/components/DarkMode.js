@@ -4,20 +4,8 @@ import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
 import { Icon } from '@chakra-ui/react'
 import { GoSettings } from 'react-icons/go'
 
-const DarkMode = () => {
+const DarkMode = (props) => {
     const { colorMode, toggleColorMode } = useColorMode();
-
-    const handleDark = () => {
-        if (colorMode !== 'dark') {
-            toggleColorMode()
-        }
-    }
-
-    const handleLight = () => {
-        if (colorMode === 'dark') {
-            toggleColorMode()
-        }
-    }
 
     return (
 
@@ -30,8 +18,8 @@ const DarkMode = () => {
                         {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
                     </MenuButton>
                     <MenuList icon={colorMode === 'dark'} >
-                        <MenuItem onClick={handleLight} fontSize='xs'><SunIcon mr='1rem' />Light</MenuItem>
-                        <MenuItem onClick={handleDark} fontSize='xs'><MoonIcon mr='1rem' />Dark</MenuItem>
+                        <MenuItem onClick={props.handleLight} fontSize='xs'><SunIcon mr='1rem' />Light</MenuItem>
+                        <MenuItem onClick={props.handleDark} fontSize='xs'><MoonIcon mr='1rem' />Dark</MenuItem>
                         <MenuItem fontSize='xs'> <Icon as={GoSettings} mr='1rem' /> System</MenuItem>
                     </MenuList>
                 </Box>

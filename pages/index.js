@@ -21,6 +21,19 @@ function Home() {
 
   const bgColor = useColorModeValue('white', '#1e1e1e')
   const secondaryTextColor = useColorModeValue('#1e1e1e', 'white')
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  const handleDark = () => {
+    if (colorMode !== 'dark') {
+      toggleColorMode()
+    }
+  }
+
+  const handleLight = () => {
+    if (colorMode === 'dark') {
+      toggleColorMode()
+    }
+  }
 
   // Created the responsive design so that tablet falls under mobile from mockup
   const breakpoints = {
@@ -41,12 +54,9 @@ function Home() {
       <Box p={{ base: '4rem 2rem 0', xl: '4rem 5rem 5rem ' }} m={{ xl: 'auto' }}>
         <Flex as="header" flexDirection="row" justify="space-between" mb='1rem'
           width='100%'>
-          <Image src={Logo} alt="plotly-logo" width='120px' />
-          {/* <Image src={Darklogo} alt="plotly-logo" width='100px' /> */}
-          <DarkMode />
+          {colorMode === 'dark' ? <Image src={Darklogo} alt="plotly-logo" width='120px' /> : <Image src={Logo} alt="plotly-logo" width='100px' />}
+          <DarkMode handleLight={handleLight} handleDark={handleDark} />
         </Flex>
-
-
         <Box m={{ xl: '1rem' }} display={{ xl: 'block' }} >
           <Flex flexDirection='column' width={{ xl: '550px' }} pt={{ xl: '3rem' }}>
             <Flex as="main" flexDirection="column" p='0.8rem 0 0'>
@@ -124,10 +134,7 @@ function Home() {
             </Flex>
           </Flex>
         </Flex>
-
       </Box>
-
-
     </Stack >
   )
 }
