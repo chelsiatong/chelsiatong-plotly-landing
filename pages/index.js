@@ -41,7 +41,7 @@ function Home() {
       <Box p={{ base: '4rem 2rem 0', xl: '4rem 5rem 5rem ' }} m={{ xl: 'auto' }}>
         <Flex as="header" flexDirection="row" justify="space-between" mb='1rem'
           width='100%'>
-          <Image src={Logo} alt="plotly-logo" width='110px' />
+          <Image src={Logo} alt="plotly-logo" width='120px' />
           {/* <Image src={Darklogo} alt="plotly-logo" width='100px' /> */}
           <DarkMode />
         </Flex>
@@ -59,7 +59,7 @@ function Home() {
               <ListItem >Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</ListItem>
             </UnorderedList>
           </Flex>
-          <Box m={{ base: 'auto', xl: '0' }} p='3.2rem 1.5rem 2rem' borderRadius='1.4rem' b='0.5px solid  #ececec;' boxShadow='4px 8px 18px 0px #D9D9D940;' maxWidth={{ base: '40rem', xl: '30rem' }} zIndex='9999' position='relative' top={{ base: '1.2rem', sm: '1.8rem', md: '2.7rem', xl: '-23rem' }} left={{ xl: '35rem' }} bg={bgColor} >
+          <Box m={{ base: 'auto', xl: '0' }} p='3.2rem 1.5rem 2rem' borderRadius='1.4rem' b='0.5px solid  #ececec;' boxShadow='4px 8px 18px 0px #D9D9D940;' maxWidth={{ base: '40rem', xl: '30rem' }} zIndex='9999' position='relative' top={{ base: '1rem', sm: '1.8rem', md: '2.7rem', xl: '-23rem' }} left={{ xl: '38rem' }} bg={bgColor} >
             <RadioGroup defaultValue='1' >
               <Stack direction='row' spacing={{ base: 7, xl: 8 }} fontSize='xs' fontWeight='bold' mb='2rem'  >
                 <Radio colorScheme='#7A76FF;' color={secondaryTextColor} value='1'>Professional</Radio>
