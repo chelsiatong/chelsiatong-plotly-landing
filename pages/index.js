@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Text, Heading, Flex, Stack, Box } from '@chakra-ui/react';
+import { Text, Heading, Flex, Stack, Box, Button } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react'
 import { Radio, RadioGroup } from '@chakra-ui/react'
 import { FormControl, FormLabel, Input, Textarea } from '@chakra-ui/react'
-import { Button } from '@chakra-ui/react'
 import { useColorMode, useColorModeValue } from '@chakra-ui/react'
-import DarkMode from '../src/components/DarkMode'
+import DarkTheme from '../src/components/DarkTheme'
 import Logo from '../src/assets/logo/plotly-logo.svg';
 import Darklogo from '../src/assets/logo/plotly-dark-logo.svg';
 import Purple from '../src/assets/images/purple-image.svg';
@@ -16,6 +15,7 @@ import Kc from '../src/assets/logo/kc-logo.svg';
 import Azz from '../src/assets/logo/azz-logo.svg';
 import Tmobile from '../src/assets/logo/Tmobile-logo.svg';
 import Tva from '../src/assets/logo/tva-logo.svg';
+// import { useEffect, useState } from 'react'
 
 function Home() {
 
@@ -34,6 +34,7 @@ function Home() {
       toggleColorMode()
     }
   }
+
 
   // const handleFormSubmit = (event) => {
   //   event.preventDefault();
@@ -60,7 +61,7 @@ function Home() {
         <Flex as="header" flexDirection="row" justify="space-between" mb='1rem'
           width='100%'>
           {colorMode === 'dark' ? <Image src={Darklogo} alt="plotly-logo" width='130px' /> : <Image src={Logo} alt="plotly-logo" width='130px' />}
-          <DarkMode handleLight={handleLight} handleDark={handleDark} />
+          <DarkTheme handleLight={handleLight} handleDark={handleDark} />
         </Flex>
         <Box m={{ xl: '1rem' }} display={{ xl: 'block' }}  >
           <Flex flexDirection='column' width={{ xl: '550px' }} pt={{ xl: '3rem' }}>

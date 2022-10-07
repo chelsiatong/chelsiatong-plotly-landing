@@ -4,8 +4,18 @@ import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
 import { Icon } from '@chakra-ui/react'
 import { GoSettings } from 'react-icons/go'
 
-const DarkMode = (props) => {
+const DarkTheme = (props) => {
     const { colorMode, toggleColorMode } = useColorMode();
+
+    // const toggleTheme = () => {
+    //     const theme = localStorage.getItem('theme');
+    //     if (theme) {
+    //         localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark');
+    //     } else {
+    //         localStorage.setItem('theme', 'dark');
+    //     }
+    //     setDarkMode(!darkMode);
+    // }
 
     return (
 
@@ -20,7 +30,9 @@ const DarkMode = (props) => {
                     <MenuList zIndex={{ xl: '9999' }} icon={colorMode === 'dark'} >
                         <MenuItem onClick={props.handleLight} fontSize='xs'><SunIcon mr='1rem' />Light</MenuItem>
                         <MenuItem onClick={props.handleDark} fontSize='xs'><MoonIcon mr='1rem' />Dark</MenuItem>
-                        <MenuItem onClick={props.defaultMode} fontSize='xs'> <Icon as={GoSettings} mr='1rem' /> System</MenuItem>
+                        <MenuItem id='themeBtn' fontSize='xs'> <Icon as={GoSettings} mr='1rem' /> System</MenuItem>
+
+                        {/* <MenuItem id='themeBtn' onClick={toggleTheme} fontSize='xs'> <Icon as={GoSettings} mr='1rem' /> System</MenuItem> */}
                     </MenuList>
                 </Box>
             )}
@@ -28,4 +40,4 @@ const DarkMode = (props) => {
     )
 }
 
-export default DarkMode;
+export default DarkTheme;
