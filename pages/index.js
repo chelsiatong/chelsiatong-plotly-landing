@@ -36,8 +36,12 @@ function Home() {
     }
   }
 
-  //when click on button:
-  // event.target.reset();
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   event.target.reset();
+  // }
+
+
 
   // Created the responsive design so that tablet falls under mobile from mockup
   const breakpoints = {
@@ -83,39 +87,39 @@ function Home() {
             <FormControl color='#7E8489;'>
               <Flex flexDirection={{ base: 'column', xl: 'row' }}>
                 <Flex flexDirection='column' mr={{ xl: '1rem' }}>
-                  <FormLabel fontWeight='400' requiredIndicator>First name*</FormLabel>
+                  <FormLabel fontWeight='400' >First name*</FormLabel>
                   <Input type='text' mb='1.5rem' />
                 </Flex>
                 <Flex flexDirection='column'>
-                  < FormLabel fontWeight='400' requiredIndicator> Last name*</FormLabel>
+                  < FormLabel fontWeight='400' > Last name*</FormLabel>
                   <Input type='text' mb='1.5rem' />
                 </Flex>
               </Flex>
               <Flex flexDirection={{ base: 'column', xl: 'row' }}>
                 <Flex flexDirection='column' mr={{ xl: '1rem' }}>
-                  <FormLabel fontWeight='400' requiredIndicator>Business Email*</FormLabel>
+                  <FormLabel fontWeight='400' >Business Email*</FormLabel>
                   <Input type='email' mb='1.5rem' />
                 </Flex>
                 <Flex flexDirection='column'>
-                  <FormLabel fontWeight='400' requiredIndicator>Phone*</FormLabel>
+                  <FormLabel fontWeight='400' >Phone*</FormLabel>
                   <Input type='tel' mb='1.5rem' />
                 </Flex>
               </Flex>
               <Flex flexDirection={{ base: 'column', xl: 'row' }}>
                 <Flex flexDirection='column' mr={{ xl: '1rem' }}>
-                  <FormLabel fontWeight='400' requiredIndicator>Company Name*</FormLabel>
+                  <FormLabel fontWeight='400' >Company Name*</FormLabel>
                   <Input type='text' mb='1.5rem' />
                 </Flex>
                 <Flex flexDirection='column'>
-                  <FormLabel fontWeight='400' requiredIndicator>Title*</FormLabel>
+                  <FormLabel fontWeight='400' >Title*</FormLabel>
                   <Input type='text' mb='1.5rem' />
                 </Flex>
               </Flex>
-              <FormLabel fontWeight='400' requiredIndicator>Tell us about your project*</FormLabel>
+              <FormLabel fontWeight='400' >Tell us about your project*</FormLabel>
               <Textarea height={'8rem'} resize='none' mb='1.5rem' />
             </FormControl>
             <Flex flexDirection="row">
-              <Button color='white' textTransform='uppercase' bgColor='#7A76FF;' mr='2rem' letterSpacing='0.15em' fontWeight='bold' p='1.5rem'>Send</Button>
+              <Button type='submit' color='white' textTransform='uppercase' bgColor='#7A76FF;' mr='2rem' letterSpacing='0.15em' fontWeight='bold' p='1.5rem'>Send</Button>
               <Text pt='0.8rem' color='#7E8489;' fontSize='sm'>*required</Text>
             </Flex>
           </Box>
