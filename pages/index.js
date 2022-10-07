@@ -16,7 +16,6 @@ import Kc from '../src/assets/logo/kc-logo.svg';
 import Azz from '../src/assets/logo/azz-logo.svg';
 import Tmobile from '../src/assets/logo/Tmobile-logo.svg';
 import Tva from '../src/assets/logo/tva-logo.svg';
-// import theme from '../src/components/theme'
 
 function Home() {
 
@@ -36,12 +35,10 @@ function Home() {
     }
   }
 
-  // const handleSubmit = (event) => {
+  // const handleFormSubmit = (event) => {
   //   event.preventDefault();
   //   event.target.reset();
   // }
-
-
 
   // Created the responsive design so that tablet falls under mobile from mockup
   const breakpoints = {
@@ -84,7 +81,7 @@ function Home() {
                 <Radio colorScheme='#7A76FF;' color={secondaryTextColor} value='2'>Student</Radio>
               </Stack>
             </RadioGroup>
-            <FormControl color='#7E8489;'>
+            <FormControl color='#7E8489;' as='form' /*onSubmit={handleFormSubmit}*/ >
               <Flex flexDirection={{ base: 'column', xl: 'row' }}>
                 <Flex flexDirection='column' mr={{ xl: '1rem' }}>
                   <FormLabel fontWeight='400' >First name*</FormLabel>
