@@ -78,7 +78,7 @@ function Home() {
           <Flex flexDirection='column' width={{ xl: '550px' }} pt={{ xl: '3rem' }}>
             <Flex as="main" flexDirection="column" p='0.8rem 0 0'>
               <Heading as='h1' size={{ base: 'xl', lg: '2xl' }} pb={{ lg: '1rem' }}>See Dash in action.</Heading>
-              <Text fontSize={{ base: 'md', lg: 'xl', xl: '2xl' }} fontWeight='bold' mb='1rem'>Thank you for your interest in Dash Enterprise. We'll be in touch soon to schedule a demo.</Text>
+              <Text fontSize={{ base: 'md', lg: 'xl', xl: '2xl' }} fontWeight='bold' mb='1rem'>Thank you for your interest in Dash Enterprise. We&apos;ll be in touch soon to schedule a demo.</Text>
             </Flex>
             <UnorderedList fontSize={{ base: 'sm', lg: 'lg', xl: 'md' }} colorScheme='#7A76FF;' color='#7E8489;'>
               <ListItem pb={{ base: '0.5rem', xl: '1rem' }} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ListItem>
