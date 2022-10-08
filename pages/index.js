@@ -15,7 +15,6 @@ import Kc from '../src/assets/logo/kc-logo.svg';
 import Azz from '../src/assets/logo/azz-logo.svg';
 import Tmobile from '../src/assets/logo/Tmobile-logo.svg';
 import Tva from '../src/assets/logo/tva-logo.svg';
-// import { useEffect, useState } from 'react'
 
 function Home() {
 
@@ -35,11 +34,23 @@ function Home() {
     }
   }
 
+  const handleSystem = () => {
+    if (window.matchMedia) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        handleDark()
+      } else {
+        handleLight()
+      }
+    }
+  }
 
+
+  // reset form when send button is clicked
   // const handleFormSubmit = (event) => {
   //   event.preventDefault();
   //   event.target.reset();
   // }
+
 
   // Created the responsive design so that tablet falls under mobile from mockup
   const breakpoints = {
@@ -61,7 +72,7 @@ function Home() {
         <Flex as="header" flexDirection="row" justify="space-between" mb='1rem'
           width='100%'>
           {colorMode === 'dark' ? <Image src={Darklogo} alt="plotly-logo" width='130px' /> : <Image src={Logo} alt="plotly-logo" width='130px' />}
-          <DarkTheme handleLight={handleLight} handleDark={handleDark} />
+          <DarkTheme handleLight={handleLight} handleDark={handleDark} handleSystem={handleSystem} />
         </Flex>
         <Box m={{ xl: '1rem' }} display={{ xl: 'block' }}  >
           <Flex flexDirection='column' width={{ xl: '550px' }} pt={{ xl: '3rem' }}>
@@ -82,7 +93,7 @@ function Home() {
                 <Radio colorScheme='#7A76FF;' color={secondaryTextColor} value='2'>Student</Radio>
               </Stack>
             </RadioGroup>
-            <FormControl color='#7E8489;' as='form' /*onSubmit={handleFormSubmit}*/ >
+            <FormControl color='#7E8489;' as='form' >
               <Flex flexDirection={{ base: 'column', xl: 'row' }}>
                 <Flex flexDirection='column' mr={{ xl: '1rem' }}>
                   <FormLabel fontWeight='400' >First name*</FormLabel>
